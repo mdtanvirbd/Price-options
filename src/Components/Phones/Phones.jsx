@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';  // axios import করেছি
-import { data } from 'autoprefixer';
+
 import { BarChart, Bar,XAxis, YAxis, Tooltip } from 'recharts';
+import {Audio} from 'react-loader-spinner'
 
 const Phones = () => {
     const [phones, setPhones] = useState([]);
@@ -27,6 +28,16 @@ const Phones = () => {
 
     return (
         <div>
+            <Audio
+                height ='80'
+                width = '80'
+                radius = '9'
+                color = 'green'
+                ariaLanel = 'three-dots-loading'
+                wrapperStyle
+                wrapperClass>
+                
+            </Audio>
             <h2 className="text-5xl">Phones: {phones.length}</h2>
             <BarChart width={1000} height={400} data={phones}>
                <Bar dataKey="price" fill="#8884d8" />
